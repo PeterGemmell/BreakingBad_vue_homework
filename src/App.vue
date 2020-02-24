@@ -17,6 +17,9 @@ import CharactersList from './components/CharactersList.vue';
 import { eventBus } from './main.js';
 import CharacterDetail from './components/CharacterDetail.vue';
 import FavouriteCharacters from './components/FavouriteCharacters.vue';
+// import QuotesList from './components/QuotesList.vue';
+// import QuoteSelect from './components/QuoteSelect.vue';
+// import QuoteDetail from './components/QuoteDetail.vue';
 
 export default {
   name: 'app',
@@ -25,12 +28,21 @@ export default {
     characters: [],
     favouriteCharacters: [],
     selectedCharacter: null
+    // quotes: [],
+    // selectedQuote: null
     };
   },
   mounted(){
     fetch('https://breakingbadapi.com/api/characters')
     .then(res => res.json())
     .then(characters => this.characters = characters)
+
+  // mounted(){
+  //   fetch('https://breakingbadapi.com/api/quotes')
+  //   .then(res => res.json())
+  //   .then(quotes => this.quotes = quotes)
+  // }
+
 
     eventBus.$on('character-selected', (character) => {
       this.selectedCharacter = character;
@@ -42,6 +54,9 @@ export default {
       const characterIndex = this.favouriteCharacters.indexOf(character);
       this.favouriteCharacters.splice(characterIndex, 1);
     })
+    // eventBus.$on('quote-selected', (quote) => {
+    //   this.selectedQuote = quote;
+
 
   },
   components: {
@@ -49,6 +64,9 @@ export default {
     "character-detail": CharacterDetail,
     "character-select": CharacterSelect,
     "favourite-characters": FavouriteCharacters,
+    // "quotes-list": QuotesList,
+    // "quote-detail": QuoteDetail,
+    // "quote-select": QuoteSelect,
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <label><h3></h3>Select A Character:</h3></label>
+    <label><h3>Select A Character:</h3></label>
     <br>
     <br>
     <br>

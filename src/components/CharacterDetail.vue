@@ -12,7 +12,7 @@
     <button v-on:click="AddToFavourite"><h3>Add Favourite Character</h3></button>
     <br>
     <br>
-    <button v-on:click="DeleteFavourite"><h3>Delete Favourite Character</h3></button> 
+    <button v-on:click="DeleteFavourite"><h3>Delete Favourite Character</h3></button>
   </div>
 </template>
 
